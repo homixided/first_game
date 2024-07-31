@@ -1,28 +1,7 @@
 import random
-import time
+from utils.utils import print_text_by_char, name, items, hp
 import sys
 
-def print_text_by_char(text, delay=0.02):
-    for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
-    sys.stdout.write('\n')
-
-print_text_by_char('Введите ЖЕНСКОЕ имя вашего персонажа.')
-name = input()
-hp = 10
-
-items = {
-    'bandage': False,
-    'key': False,
-    'armor': False,
-    'kitchen_knife': False,
-    'wall_sword': False,
-    'apple_juice': False,
-}
-
-dialog_played = False
 
 def first_location():
     global hp
@@ -230,5 +209,3 @@ def fight_boss():
             print_text_by_char(f'Последний удар был нанесен, и босс, издавая ужасающий рёв, пал перед героем. Антон, появившись из тени, подошёл к герою и, с улыбкой на лице, протянул руку.\n"Ты справилась, {name}. Ты преодолела свои страхи и победила проклятие этого места. Теперь ты свободна." ')
             print_text_by_char('Вы победили босса! Поздравляем!')
             sys.exit()
-
-first_location()
